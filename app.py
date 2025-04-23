@@ -15,12 +15,12 @@ st.set_page_config(
 st.markdown("""
     <style>
         body {
-            background-color: #FFF6F0;
-            color: #3D2C1D;
+            background-color: #E7F0FD;
+            color: #2B2B2B;
         }
         .main {
-            background-color: #FFF6F0 !important;
-            color: #3D2C1D !important;
+            background-color: #E7F0FD !important;
+            color: #2B2B2B !important;
         }
         .stApp {
             font-family: 'Segoe UI', sans-serif;
@@ -29,13 +29,14 @@ st.markdown("""
             padding-top: 2rem;
         }
         h1, h2, h3, h4 {
-            color: #3D2C1D;
+            color: #2B2B2B;
         }
         .stProgress > div > div > div > div {
             background-color: #FFB085;
         }
         .recuadro {
             background-color: white;
+            color: black;
             border-radius: 10px;
             padding: 1rem;
             margin-bottom: 1rem;
@@ -46,7 +47,7 @@ st.markdown("""
 
 # Sidebar con imagen
 with st.sidebar:
-    st.image("owoawa.png", use_column_width=True)
+    st.image("owoawa.png", use_container_width=True)
     st.title("Opciones")
     modo = st.selectbox(
         "Selecciona el modo de entrada:",
