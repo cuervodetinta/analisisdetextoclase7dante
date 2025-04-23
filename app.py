@@ -4,14 +4,14 @@ from textblob import TextBlob
 import re
 from googletrans import Translator
 
-# Configuración de la página
+
 st.set_page_config(
     page_title="Analizador de Texto Simple",
     page_icon="📊",
     layout="wide"
 )
 
-# Estilos personalizados
+
 st.markdown("""
     <style>
         body {
@@ -45,7 +45,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Sidebar con imagen
+
 with st.sidebar:
     st.image("owoawa.png", use_container_width=True)
     st.title("Opciones")
@@ -54,9 +54,9 @@ with st.sidebar:
         ["Texto directo", "Archivo de texto"]
     )
 
-# Función para contar palabras
+
 def contar_palabras(texto):
-    stop_words = set([...])  # Misma lista que ya tienes (omitida aquí por brevedad)
+    stop_words = set([...])  
     palabras = re.findall(r'\b\w+\b', texto.lower())
     palabras_filtradas = [p for p in palabras if p not in stop_words and len(p) > 2]
     contador = {}
@@ -95,7 +95,7 @@ def procesar_texto(texto):
         "texto_traducido": texto_ingles
     }
 
-# Visualización
+
 def crear_visualizaciones(resultados):
     col1, col2 = st.columns(2)
     with col1:
@@ -142,9 +142,8 @@ def crear_visualizaciones(resultados):
             emoji = "😊" if polaridad > 0.05 else "😟" if polaridad < -0.05 else "😐"
             st.markdown(f'<div class="recuadro">{i}. {emoji} <b>Original:</b> *"{frase_original}"*<br><b>Traducción:</b> *"{frase_traducida}"* (Sentimiento: {polaridad:.2f})</div>', unsafe_allow_html=True)
 
-# Lógica principal
 if modo == "Texto directo":
-    st.subheader("Ingresa tu texto para analizar")
+    st.subheader("ANALIZADOR DE TEXTO: ¡Ingresa el tuyo ya!")
     texto = st.text_area("", height=200, placeholder="Escribe o pega aquí el texto que deseas analizar...")
     if st.button("Analizar texto"):
         if texto.strip():
@@ -168,6 +167,6 @@ elif modo == "Archivo de texto":
         except Exception as e:
             st.error(f"Error al procesar el archivo: {e}")
 
-# Pie de página
+
 st.markdown("---")
-st.markdown("Desarrollado con ❤️ usando Streamlit y TextBlob")
+st.markdown("Desarrollado con ❤️ usando Streamlit y TextBlob yayyyyy")
